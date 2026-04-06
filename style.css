@@ -1,0 +1,140 @@
+/* Color Palette Variables */
+:root {
+    --bg-color: #0f172a;       /* Deep slate blue background */
+    --card-bg: #1e293b;        /* Lighter slate for cards */
+    --accent-bio: #fbbf24;     /* Warm Gold */
+    --accent-gaming: #38bdf8;  /* Neon Blue */
+    --accent-kdrama: #f472b6;  /* Soft Pink */
+    --accent-anime: #f87171;   /* Fiery Red */
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header & Image Styles */
+header {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+header h1 {
+    font-size: 4rem;
+    color: var(--text-main);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    color: var(--accent-bio);
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.hero-image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.hero-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--accent-bio);
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+    max-width: 100%;
+}
+
+/* Card and Section Styles */
+.card {
+    background: var(--card-bg);
+    padding: 35px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid #334155;
+}
+
+.card p {
+    margin-bottom: 15px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: var(--accent-bio); /* Default heading color */
+}
+
+.gaming-title { color: var(--accent-gaming); }
+.kdrama-title { color: var(--accent-kdrama); }
+.anime-title { color: var(--accent-anime); }
+
+/* Grid Layout for Lists */
+.list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.item {
+    background: #0f172a;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid transparent;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-3px);
+    background: #162032;
+}
+
+.item strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+/* Color-code the left borders based on the section */
+.gaming-section .item { border-left-color: var(--accent-gaming); color: var(--text-main); }
+.gaming-section .item strong { color: var(--accent-gaming); }
+
+.kdrama-section .item { border-left-color: var(--accent-kdrama); color: var(--text-main); }
+.kdrama-section .item strong { color: var(--accent-kdrama); }
+
+.anime-section .item { border-left-color: var(--accent-anime); color: var(--text-main); }
+.anime-section .item strong { color: var(--accent-anime); }
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-dim);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    header h1 { font-size: 3rem; }
+    .hero-img { width: 200px; height: 200px; }
+    .card { padding: 20px; }
+}
